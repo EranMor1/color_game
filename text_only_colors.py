@@ -3,13 +3,6 @@ import random
 BOARD_SIZE = 18
 COLORS = ['R', 'B', 'G', 'Y']
 MAX_MOVES = 21
-ANSI_COLOR_MAP = {
-    'R': '\033[41m  \033[0m',  # Red background
-    'G': '\033[42m  \033[0m',  # Green background
-    'B': '\033[44m  \033[0m',  # Blue background
-    'Y': '\033[43m  \033[0m'   # Yellow background
-}
-
 
 
 class game_board():
@@ -57,7 +50,8 @@ class game_board():
     def print_board(self):
         # Print the current board in a grid format
         for row in self.board:
-            print(''.join(ANSI_COLOR_MAP[cell] for cell in row))
+            print(' '.join(row))
+        print()
 
     def choose_color(self):
         print(f"Move {self.moves + 1}/{MAX_MOVES}")
